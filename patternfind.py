@@ -1,18 +1,15 @@
 from sys import exit
-inp = input ()
-msk = input ()
+inp, msk = input (), input()
 
 if len (msk) > len (inp):
     print (-1)
     exit()
 pos = -1
 for i in range (len(inp) - len(msk) + 1):
-    fits = True
     for j in range (len(msk)):
         if (inp[i+j] != msk[j]) and (msk[j] != '@'):
-            fits = False
             break
-    if fits:
+    else:
         pos = i
         break
 print (pos)
